@@ -1,0 +1,236 @@
+/* PALETA DE CORES PROFISSIONAL E SUAVE */
+:root {
+    --primary-color: #4A6572; /* Azul Marinho Suave - Ação Principal */
+    --secondary-color: #8DA9C4; /* Azul Pastel - Destaque */
+    --background-light: #F4F7F9; /* Fundo Suave */
+    --background-dark: #FFFFFF; /* Fundo Branco (Cartões) */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- ESTILOS GERAIS --- */
+
+section {
+    /* CORREÇÃO: Reduzindo o padding vertical padrão para diminuir espaços */
+    padding: 60px 0; 
+    text-align: center;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2F4858; /* Um tom de azul escuro */
+}
+
+.section-title {
+    font-size: 2.2em;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    left: 25%;
+    bottom: -10px;
+}
+
+/* --- BOTÕES --- */
+
+.btn-cta, .btn-card {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 10px;
+    border: none;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.btn-cta:hover, .btn-card:hover {
+    background-color: #3B525F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: none;
+}
+
+.secondary-cta:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* --- HERO SECTION --- */
+
+.hero-section {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    /* O Hero mantém um padding maior para impacto */
+    padding: 120px 0; 
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-section .subtitle {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* --- SEÇÃO SOBRE (Opcional, mas mantém o padding padrão) --- */
+.section-about {
+    /* Herda o padding de 60px 0 da tag <section> */
+}
+
+
+/* --- SEÇÃO SERVIÇOS --- */
+
+.services-section {
+    background-color: var(--background-light);
+    /* Herda o padding de 60px 0 da tag <section> */
+}
+
+.services-section .container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    /* * CORREÇÃO PRINCIPAL: 
+     * A linha 'margin-top: 50px;' foi removida daqui.
+     * Ela estava duplicando o espaço que o 'margin-bottom: 50px;' 
+     * do .section-title já criava.
+    */
+}
+
+.service-card {
+    background-color: var(--background-dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    text-align: center;
+    flex: 1 1 300px; /* Flexível para 3 cartões por linha */
+    min-height: 350px; /* Altura mínima para padronização */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.price, .contact {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #C07F00; /* Destaque para preço */
+    margin-bottom: 15px;
+}
+
+/* --- SEÇÃO DE CHAMADA FINAL (CTA) --- */
+
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 60px 0; /* (Mantido 60px) */
+}
+
+.cta-section h2 {
+    color: var(--text-light);
+    font-size: 2em;
+}
+
+.cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.final-cta {
+    background-color: #E86A92; /* Cor de destaque quente para o CTA final */
+}
+
+.final-cta:hover {
+    background-color: #D65A80;
+}
+
+/* --- RODAPÉ --- */
+
+.footer-section {
+    background-color: #2F4858;
+    color: #E0E7E9;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- EFEITO DE FADE (SCROLL REVEAL) --- */
+/* (Esta parte permanece inalterada) */
+
+/* 1. Estado Inicial Oculto */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px); /* Começa 30px abaixo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transição suave */
+}
+
+/* 2. Estado Ativo/Visível (Adicionado pelo JavaScript) */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
