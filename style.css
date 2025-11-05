@@ -31,9 +31,9 @@ body {
 /* --- ESTILOS GERAIS --- */
 
 section {
-    /* CORREÇÃO: Reduzindo o padding vertical padrão para diminuir espaços */
     padding: 60px 0; 
     text-align: center;
+    overflow: hidden; /* Garante que os reveals não causem barra de rolagem */
 }
 
 h1, h2, h3 {
@@ -44,7 +44,7 @@ h1, h2, h3 {
 
 .section-title {
     font-size: 2.2em;
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Espaço entre o título e o grid de cards */
     position: relative;
     display: inline-block;
 }
@@ -99,7 +99,6 @@ h1, h2, h3 {
 .hero-section {
     background-color: var(--secondary-color);
     color: var(--text-dark);
-    /* O Hero mantém um padding maior para impacto */
     padding: 120px 0; 
     text-align: center;
 }
@@ -117,11 +116,6 @@ h1, h2, h3 {
     opacity: 0.9;
 }
 
-/* --- SEÇÃO SOBRE (Opcional, mas mantém o padding padrão) --- */
-.section-about {
-    /* Herda o padding de 60px 0 da tag <section> */
-}
-
 
 /* --- SEÇÃO SERVIÇOS --- */
 
@@ -130,17 +124,18 @@ h1, h2, h3 {
     /* Herda o padding de 60px 0 da tag <section> */
 }
 
-.services-section .container {
+/*
+ * ATUALIZAÇÃO PRINCIPAL:
+ * As propriedades de flex (display, gap, wrap, justify)
+ * foram movidas do '.container' para esta nova classe '.services-grid'.
+ */
+.services-grid {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    
-    /* * CORREÇÃO PRINCIPAL: 
-     * A linha 'margin-top: 50px;' foi removida daqui.
-     * Ela estava duplicando o espaço que o 'margin-bottom: 50px;' 
-     * do .section-title já criava.
-    */
+    /* O margin-top que estava no H2 agora está aqui, separando o grid do título */
+    /* margin-top: 50px; -> Removido pois o .section-title já tem margin-bottom */
 }
 
 .service-card {
@@ -164,6 +159,7 @@ h1, h2, h3 {
 .service-card .icon {
     font-size: 3em;
     margin-bottom: 15px;
+    color: var(--primary-color); /* Ícone com a cor primária */
 }
 
 .service-card h3 {
